@@ -41,7 +41,7 @@ typedef struct ats_task{
 			void					*task_reference;
 	volatile uint8_t				age;
 			ats_task_status			status;
-	const	ats_task_priority		priority;
+			ats_task_priority		priority;
 			uint16_t				rank;
 }ats_task;
 

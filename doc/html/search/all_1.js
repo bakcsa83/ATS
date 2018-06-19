@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['calculate_5frank',['calculate_rank',['../_a_t_s_8c.html#ac369e7bcc0bee1cc0060ebc194cf3158',1,'ATS.c']]]
+  ['bats_5fsystick',['bats_systick',['../_a_t_s_8c.html#a48fcedce28ce2b65f4a727285a1c350b',1,'ATS.c']]]
 ];

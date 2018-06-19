@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['sqr',['sqr',['../_a_t_s_8c.html#ab5ea6e32a9cc64810884cc08f8f83699',1,'ATS.c']]],
-  ['status',['status',['../structats__task.html#a3e13df7d62534617863b74120208cc35',1,'ats_task']]]
+  ['rank',['rank',['../structats__task.html#a9f5c1f88ad47cd9c31caaea67f5012a0',1,'ats_task']]],
+  ['report_5ferror',['report_error',['../_a_t_s_8c.html#a00da768edc35a4993cd054dd7937b6fa',1,'ATS.c']]],
+  ['report_5ftask_5finvocation',['report_task_invocation',['../_a_t_s_8c.html#a7bc290a066ece18f70ba4f4151775594',1,'ATS.c']]],
+  ['run',['run',['../structats__task.html#a1b324229e7846c3a5697b49e4c999fa2',1,'ats_task']]]
 ];

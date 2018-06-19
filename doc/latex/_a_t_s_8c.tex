@@ -4,11 +4,9 @@
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{_a_t_s_8c_a9c5c457c53b098f54ed76f3cad099ea4}{ats\+\_\+init} (void($\ast$report\+\_\+error\+\_\+)(uint8\+\_\+t error\+\_\+code), void($\ast$report\+\_\+task\+\_\+invocation\+\_\+)(\hyperlink{structats__task}{ats\+\_\+task} task))
+void \hyperlink{_a_t_s_8c_aaec05dfce732cea9d2611d20391a3f4c}{ats\+\_\+init} (void($\ast$report\+\_\+error\+\_\+)(uint8\+\_\+t error\+\_\+code), void($\ast$report\+\_\+task\+\_\+invocation\+\_\+)(\hyperlink{structats__task}{ats\+\_\+task} $\ast$task))
 \item 
 static \hyperlink{structats__task}{ats\+\_\+task} $\ast$ \hyperlink{_a_t_s_8c_ac369e7bcc0bee1cc0060ebc194cf3158}{calculate\+\_\+rank} ()
-\item 
-static uint8\+\_\+t \hyperlink{_a_t_s_8c_ab5ea6e32a9cc64810884cc08f8f83699}{sqr} (uint8\+\_\+t base)
 \item 
 void \hyperlink{_a_t_s_8c_a5263a07fbf7a99103d0e2d0a7089c042}{ats\+\_\+reset} ()
 \item 
@@ -16,7 +14,7 @@ void \hyperlink{_a_t_s_8c_a5263a07fbf7a99103d0e2d0a7089c042}{ats\+\_\+reset} ()
 \item 
 void \hyperlink{_a_t_s_8c_abc71e15acb8dadced5a4a49ba13bc598}{ats\+\_\+release\+\_\+task\+\_\+slot} (\hyperlink{structats__task}{ats\+\_\+task} $\ast$task)
 \item 
-void \hyperlink{_a_t_s_8c_ac60de65cfea1086409a754f072b411f0}{ats\+\_\+systick} ()
+void \hyperlink{_a_t_s_8c_a48fcedce28ce2b65f4a727285a1c350b}{bats\+\_\+systick} ()
 \item 
 void \hyperlink{_a_t_s_8c_ae55d7fd9fe38b98c660eba107d4a8ac6}{ats\+\_\+start} ()
 \item 
@@ -31,7 +29,7 @@ static volatile uint8\+\_\+t \hyperlink{_a_t_s_8c_a0ca7691f0758cc2c8b3a0b3167547
 \item 
 void($\ast$ \hyperlink{_a_t_s_8c_a00da768edc35a4993cd054dd7937b6fa}{report\+\_\+error} )(uint8\+\_\+t error\+\_\+code)
 \begin{DoxyCompactList}\small\item\em 0 means A\+TS is not running. 1 means A\+TS is running \end{DoxyCompactList}\item 
-void($\ast$ \hyperlink{_a_t_s_8c_ac26b71d644fc3c0d47d43b18abe4b83e}{report\+\_\+task\+\_\+invocation} )(\hyperlink{structats__task}{ats\+\_\+task})
+void($\ast$ \hyperlink{_a_t_s_8c_a7bc290a066ece18f70ba4f4151775594}{report\+\_\+task\+\_\+invocation} )(\hyperlink{structats__task}{ats\+\_\+task} $\ast$task)
 \end{DoxyCompactItemize}
 
 
@@ -51,11 +49,11 @@ A\+TS main source file. It contains most of the implementation \begin{DoxyCopyri
 \subsubsection{\texorpdfstring{ats\+\_\+get\+\_\+free\+\_\+task\+\_\+slot()}{ats\_get\_free\_task\_slot()}}
 {\footnotesize\ttfamily \hyperlink{_a_t_s_8h_a965a1ebfda4c1a827a8197208f1d5460}{ats\+\_\+result} ats\+\_\+get\+\_\+free\+\_\+task\+\_\+slot (\begin{DoxyParamCaption}\item[{\hyperlink{structats__task}{ats\+\_\+task} $\ast$$\ast$}]{task }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{_a_t_s_8c_a9c5c457c53b098f54ed76f3cad099ea4}\label{_a_t_s_8c_a9c5c457c53b098f54ed76f3cad099ea4}} 
+\mbox{\Hypertarget{_a_t_s_8c_aaec05dfce732cea9d2611d20391a3f4c}\label{_a_t_s_8c_aaec05dfce732cea9d2611d20391a3f4c}} 
 \index{A\+T\+S.\+c@{A\+T\+S.\+c}!ats\+\_\+init@{ats\+\_\+init}}
 \index{ats\+\_\+init@{ats\+\_\+init}!A\+T\+S.\+c@{A\+T\+S.\+c}}
 \subsubsection{\texorpdfstring{ats\+\_\+init()}{ats\_init()}}
-{\footnotesize\ttfamily void ats\+\_\+init (\begin{DoxyParamCaption}\item[{void($\ast$)(uint8\+\_\+t error\+\_\+code)}]{report\+\_\+error\+\_\+,  }\item[{void($\ast$)(\hyperlink{structats__task}{ats\+\_\+task} task)}]{report\+\_\+task\+\_\+invocation\+\_\+ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void ats\+\_\+init (\begin{DoxyParamCaption}\item[{void($\ast$)(uint8\+\_\+t error\+\_\+code)}]{report\+\_\+error\+\_\+,  }\item[{void($\ast$)(\hyperlink{structats__task}{ats\+\_\+task} $\ast$task)}]{report\+\_\+task\+\_\+invocation\+\_\+ }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{_a_t_s_8c_abc71e15acb8dadced5a4a49ba13bc598}\label{_a_t_s_8c_abc71e15acb8dadced5a4a49ba13bc598}} 
 \index{A\+T\+S.\+c@{A\+T\+S.\+c}!ats\+\_\+release\+\_\+task\+\_\+slot@{ats\+\_\+release\+\_\+task\+\_\+slot}}
@@ -81,11 +79,11 @@ Resets all internal variables to 0, drops all tasks. \mbox{\Hypertarget{_a_t_s_8
 \subsubsection{\texorpdfstring{ats\+\_\+stop()}{ats\_stop()}}
 {\footnotesize\ttfamily void ats\+\_\+stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{_a_t_s_8c_ac60de65cfea1086409a754f072b411f0}\label{_a_t_s_8c_ac60de65cfea1086409a754f072b411f0}} 
-\index{A\+T\+S.\+c@{A\+T\+S.\+c}!ats\+\_\+systick@{ats\+\_\+systick}}
-\index{ats\+\_\+systick@{ats\+\_\+systick}!A\+T\+S.\+c@{A\+T\+S.\+c}}
-\subsubsection{\texorpdfstring{ats\+\_\+systick()}{ats\_systick()}}
-{\footnotesize\ttfamily void ats\+\_\+systick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{_a_t_s_8c_a48fcedce28ce2b65f4a727285a1c350b}\label{_a_t_s_8c_a48fcedce28ce2b65f4a727285a1c350b}} 
+\index{A\+T\+S.\+c@{A\+T\+S.\+c}!bats\+\_\+systick@{bats\+\_\+systick}}
+\index{bats\+\_\+systick@{bats\+\_\+systick}!A\+T\+S.\+c@{A\+T\+S.\+c}}
+\subsubsection{\texorpdfstring{bats\+\_\+systick()}{bats\_systick()}}
+{\footnotesize\ttfamily void bats\+\_\+systick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{_a_t_s_8c_ac369e7bcc0bee1cc0060ebc194cf3158}\label{_a_t_s_8c_ac369e7bcc0bee1cc0060ebc194cf3158}} 
 \index{A\+T\+S.\+c@{A\+T\+S.\+c}!calculate\+\_\+rank@{calculate\+\_\+rank}}
@@ -93,13 +91,7 @@ Resets all internal variables to 0, drops all tasks. \mbox{\Hypertarget{_a_t_s_8
 \subsubsection{\texorpdfstring{calculate\+\_\+rank()}{calculate\_rank()}}
 {\footnotesize\ttfamily static \hyperlink{structats__task}{ats\+\_\+task} $\ast$ calculate\+\_\+rank (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Internal function that calculates task ranks and returns the task with the highest rank. \mbox{\Hypertarget{_a_t_s_8c_ab5ea6e32a9cc64810884cc08f8f83699}\label{_a_t_s_8c_ab5ea6e32a9cc64810884cc08f8f83699}} 
-\index{A\+T\+S.\+c@{A\+T\+S.\+c}!sqr@{sqr}}
-\index{sqr@{sqr}!A\+T\+S.\+c@{A\+T\+S.\+c}}
-\subsubsection{\texorpdfstring{sqr()}{sqr()}}
-{\footnotesize\ttfamily static uint8\+\_\+t sqr (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{base }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-Calculates square. Base should not be greater than 3. (Max value of ats\+\_\+task\+\_\+status) 
+Internal function that calculates task ranks and returns the task with the highest rank. 
 
 \subsection{Variable Documentation}
 \mbox{\Hypertarget{_a_t_s_8c_a0ca7691f0758cc2c8b3a0b3167547076}\label{_a_t_s_8c_a0ca7691f0758cc2c8b3a0b3167547076}} 
@@ -118,11 +110,11 @@ Calculates square. Base should not be greater than 3. (Max value of ats\+\_\+tas
 
 0 means A\+TS is not running. 1 means A\+TS is running 
 
-\mbox{\Hypertarget{_a_t_s_8c_ac26b71d644fc3c0d47d43b18abe4b83e}\label{_a_t_s_8c_ac26b71d644fc3c0d47d43b18abe4b83e}} 
+\mbox{\Hypertarget{_a_t_s_8c_a7bc290a066ece18f70ba4f4151775594}\label{_a_t_s_8c_a7bc290a066ece18f70ba4f4151775594}} 
 \index{A\+T\+S.\+c@{A\+T\+S.\+c}!report\+\_\+task\+\_\+invocation@{report\+\_\+task\+\_\+invocation}}
 \index{report\+\_\+task\+\_\+invocation@{report\+\_\+task\+\_\+invocation}!A\+T\+S.\+c@{A\+T\+S.\+c}}
 \subsubsection{\texorpdfstring{report\+\_\+task\+\_\+invocation}{report\_task\_invocation}}
-{\footnotesize\ttfamily void($\ast$ report\+\_\+task\+\_\+invocation) (\hyperlink{structats__task}{ats\+\_\+task})}
+{\footnotesize\ttfamily void($\ast$ report\+\_\+task\+\_\+invocation) (\hyperlink{structats__task}{ats\+\_\+task} $\ast$task)}
 
 \mbox{\Hypertarget{_a_t_s_8c_ab6c4046c61d605da4617e8692723fc22}\label{_a_t_s_8c_ab6c4046c61d605da4617e8692723fc22}} 
 \index{A\+T\+S.\+c@{A\+T\+S.\+c}!tasks@{tasks}}

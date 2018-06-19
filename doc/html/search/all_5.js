@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ok',['OK',['../_a_t_s_8h.html#aba51915c87d64af47fb1cc59348961c9',1,'ATS.h']]]
+  ['max_5ftasks',['MAX_TASKS',['../ats__config_8h.html#aac747bed84189f8cfa509b94d488e622',1,'ats_config.h']]]
 ];

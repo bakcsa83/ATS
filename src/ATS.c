@@ -25,15 +25,17 @@ along with this program.  If not, see <https://www.gnu.org/licenses/gpl-3.0-stan
  */
 
 #include "ATS.h"
-
+#define IN_USE	1
+#define FREE	0
 static ats_task 					tasks[MAX_TASKS];
+static uint8_t						task_slot_status[MAX_TASKS];	///1=Task slot is in use; 0=Task slot is free
 static volatile uint8_t				is_running;			/// 0 means ATS is not running. 1 means ATS is running
 
 void (*report_error)(uint8_t error_code);
-void (*report_task_invocation)(ats_task);
+void (*report_task_invocation)(ats_task *task);
 
 
-void			ats_init(void (*report_error_)(uint8_t error_code),void (*report_task_invocation_)(ats_task task)){
+void			ats_init(void (*report_error_)(uint8_t error_code),void (*report_task_invocation_)(ats_task *task)){
 	report_error=report_error_;
 	report_task_invocation=report_task_invocation_;
 	ats_reset();
@@ -46,12 +48,6 @@ void			ats_init(void (*report_error_)(uint8_t error_code),void (*report_task_inv
 static ats_task		*calculate_rank();
 
 /**
- * Calculates square. Base should not be greater than 3. (Max value of ats_task_status)
- */
-static uint8_t sqr(uint8_t base);
-
-
-/**
  * Resets all internal variables to 0, drops all tasks.
  */
 
@@ -60,9 +56,11 @@ void		ats_reset(){
 	is_running=0;
 }
 
+
 ats_result		ats_get_free_task_slot(ats_task **task){
 	for(uint8_t i=0;i<MAX_TASKS;i++){
-		if(tasks[i].run==NULL){
+		if(task_slot_status[i]==FREE){
+			task_slot_status[i]=IN_USE;
 			*task=&tasks[i];
 			return OK;
 		}
@@ -74,9 +72,15 @@ ats_result		ats_get_free_task_slot(ats_task **task){
 
 void		ats_release_task_slot(ats_task *task){
 	memset(task,0,sizeof(ats_task));
+	for(uint8_t i=0;i<MAX_TASKS;i++){
+		if(&tasks[i]==task){
+			task_slot_status[i]=FREE;
+			return;
+		}
+	}
 }
 
-void			ats_systick(){
+void		 bats_systick(){
 	for(uint8_t i=0;i<MAX_TASKS;i++){
 		if(tasks[i].run==NULL) return;
 		if(tasks[i].status>ATS_QUIET) tasks[i].age++;
@@ -103,7 +107,7 @@ static ats_task		*calculate_rank(){
 	ats_task	*task=NULL;
 	for(uint8_t i=0;i<MAX_TASKS;i++){
 		if(tasks[i].run==NULL) break;
-		tasks[i].rank=sqr(tasks[i].status)*tasks[i].priority+tasks[i].age;
+		tasks[i].rank=tasks[i].status*tasks[i].status*tasks[i].priority+tasks[i].age;
 	}
 
 	for(uint8_t i=0;i<MAX_TASKS;i++){
@@ -113,20 +117,4 @@ static ats_task		*calculate_rank(){
 		}
 	}
 	return task;
-}
-
-static uint8_t sqr(uint8_t base){
-	uint8_t exp=2;
-    int result = 1;
-    for (;;)
-    {
-        if (exp & 1)
-            result *= base;
-        exp >>= 1;
-        if (!exp)
-            break;
-        base *= base;
-    }
-
-    return result;
 }

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['max_5ftasks',['MAX_TASKS',['../ats__config_8h.html#aac747bed84189f8cfa509b94d488e622',1,'ats_config.h']]]
+  ['is_5frunning',['is_running',['../_a_t_s_8c.html#a0ca7691f0758cc2c8b3a0b3167547076',1,'ATS.c']]]
 ];
