@@ -40,8 +40,7 @@ void (*sleep)();
  *
  * \param report_error Function pointer.
  */
-void ats_init(void (*report_error_)(uint8_t error_code), void (*report_task_invocation_)(ats_task *task), void (*sleep_)()) {
-	report_error = report_error_;
+void ats_init(void (*report_task_invocation_)(ats_task *task), void (*sleep_)(void)) {
 	report_task_invocation = report_task_invocation_;
 	sleep=sleep_;
 	ats_reset();

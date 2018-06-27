@@ -36,7 +36,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/gpl-3.0-stan
 #define	OK				0
 #define	ERROR			1
 
-void			ats_init(void (*report_task_invocation_)(ats_task *task),void (*sleep_)());
+void			ats_init(void (*report_task_invocation_)(ats_task *task),void (*sleep_)(void));
 void			ats_reset();
 ats_result		ats_get_free_task_slot(ats_task **task);
 void			ats_release_task_slot(ats_task *task);
