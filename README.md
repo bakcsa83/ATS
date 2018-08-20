@@ -10,9 +10,9 @@ ATS uses the `ats_task` type for task management. `ats_task` has different prope
 typedef struct ats_task{
 	void						(*handler)(void *task_reference);
 	void						*task_reference;
-	ats_task_status			status;
-	uint8_t					age;
-	ats_task_priority		priority;
+	ats_task_status					status;
+	uint8_t						age;
+	ats_task_priority				priority;
 }ats_task;
 ```
 ### Priority
